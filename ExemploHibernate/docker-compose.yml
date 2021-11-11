@@ -1,0 +1,21 @@
+# Use root/example as user/password credentials
+version: '2.1'
+
+services:
+
+  db:
+    build: .
+    image: johnwill14v/mysqlforproject
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: klo427
+    ports:
+      - 3306:3306
+    deploy:
+      resources:
+        limits:
+          cpus: 1.00
+          memory: 128M
+        reservations:
+          cpus: 0.25
+          memory: 128M
